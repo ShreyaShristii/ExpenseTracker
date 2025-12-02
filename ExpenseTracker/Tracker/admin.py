@@ -7,3 +7,4 @@ class ExpenseAdmin(admin.ModelAdmin):
     list_filter = ('category', 'date')
     search_fields = ('title', 'category')
     ordering = ('-date',)  # descending order
+#Done the basic!
