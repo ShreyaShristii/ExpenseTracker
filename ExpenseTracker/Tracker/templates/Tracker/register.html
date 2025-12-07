@@ -1,0 +1,27 @@
+{% extends 'Tracker/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+
+        <div class="card-custom">
+
+            <h2 class="text-center mb-4 fw-bold" style="color:var(--teal);">Create Your Account</h2>
+
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <button class="btn btn-success w-100 mt-3">Create Account</button>
+            </form>
+
+            <p class="text-center mt-4">
+                Already have an account?
+                <a href="/login/" class="link-highlight fw-semibold">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
