@@ -1,27 +1,47 @@
 {% extends 'Tracker/base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-5">
 
-        <div class="card-custom">
+<!-- Full-page auth background -->
+<div class="auth-body">
 
-            <h2 class="text-center mb-4 fw-bold" style="color:var(--coral);">Login</h2>
+    <div class="login-wrapper">
 
-            <form method="POST" class="mt-3">
+        <div class="glass-card">
+
+            <!-- Logo -->
+            <div class="logo-circle">
+                <span>₹</span>
+            </div>
+
+            <!-- Title -->
+            <h2 class="login-title">Welcome Back</h2>
+            <p class="login-sub">Log in to manage and visualise your spending.</p>
+
+            <!-- Login Form -->
+            <form method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
 
-                <button class="btn btn-primary w-100 mt-3">Login</button>
+                <label class="field-label">Username</label>
+                <input type="text" name="username" class="input-field" required>
+
+                <label class="field-label">Password</label>
+                <input type="password" name="password" class="input-field" required>
+
+                <button type="submit" class="btn-fintech">Login</button>
             </form>
 
-            <p class="text-center mt-4">
-                Don't have an account?
-                <a href="/register/" class="link-highlight fw-semibold">Register</a>
+            <!-- Register Link -->
+            <p class="register-text">
+                No account?
+                <a href="{% url 'register' %}" class="register-link">Register here</a>
             </p>
 
         </div>
 
     </div>
+
 </div>
+
 {% endblock %}
