@@ -3,42 +3,33 @@
 
 {% block content %}
 
-<!-- Full-page auth background -->
-<div class="auth-body">
+<div class="login-wrapper">
 
-    <div class="login-wrapper">
+    <div class="glass-card">
 
-        <div class="glass-card">
-
-            <!-- Logo -->
-            <div class="logo-circle">
-                <span>₹</span>
-            </div>
-
-            <!-- Title -->
-            <h2 class="login-title">Welcome Back</h2>
-            <p class="login-sub">Log in to manage and visualise your spending.</p>
-
-            <!-- Login Form -->
-            <form method="POST">
-                {% csrf_token %}
-
-                <label class="field-label">Username</label>
-                <input type="text" name="username" class="input-field" required>
-
-                <label class="field-label">Password</label>
-                <input type="password" name="password" class="input-field" required>
-
-                <button type="submit" class="btn-fintech">Login</button>
-            </form>
-
-            <!-- Register Link -->
-            <p class="register-text">
-                No account?
-                <a href="{% url 'register' %}" class="register-link">Register here</a>
-            </p>
-
+        <div class="logo-circle">
+            <span>₹</span>
         </div>
+
+        <h2 class="login-title">Welcome Back</h2>
+        <p class="login-sub">Log in to manage and visualise your spending.</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label class="field-label">Username</label>
+            <input type="text" name="username" class="input-field" required>
+
+            <label class="field-label">Password</label>
+            <input type="password" name="password" class="input-field" required>
+
+            <button type="submit" class="btn-fintech">Login</button>
+        </form>
+
+        <p class="register-text">
+            No account?
+            <a href="{% url 'register' %}" class="register-link">Register here</a>
+        </p>
 
     </div>
 
